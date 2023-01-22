@@ -35,10 +35,8 @@ async def on_message(message):
 		else:
 			raise ValueError
 	except ValueError:
-		
-		print(await message.delete())
-
-	print(message.author)
+		print(f'{message.author}: {message.content}')
+		await message.delete()
 
 if __name__ == '__main__':
 	client.run(config['BOT_TOKEN'])
